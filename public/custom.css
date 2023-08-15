@@ -1,0 +1,8 @@
+.translate-on-click {
+    transform: translateX(-0.25rem);
+}
+
+.bg-green-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(14 159 110 / var(--tw-bg-opacity));
+}

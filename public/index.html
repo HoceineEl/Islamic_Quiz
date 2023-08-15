@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Quiz</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="imgs/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-purple-900">
+    <div class="container mx-auto ">
+        <div
+            class="card border-gray-700 w-50 max-wlg p-6 border min-h-[600px] rounded-2xl shadow-purple-700 bg-blue-950 hover:shadow-indigo-600 shadow-2xl mt-20 hover:bg-blue-900 dark:bg-gray-800 ">
+
+            <div class=" basis-96 rounded-full h-2 mt-2 flex items-center mb-4 bg-gray-700">
+                <div class="steps  h-3 rounded-full  shadow-xl shadow-teal-500 transition  duration-1000 
+                    bg-teal-500">
+                </div>
+            </div>
+
+            <div class="flex  justify-between text-white mb-5 header  ">
+
+                <div class="">
+                    <span class="timer mx-2 "> 20:12</span> <i class="far fa-clock font-bold"></i>
+                </div>
+                <div> <span class="score mx-2 flex justify-center">
+                        0 </span><i class="fa fa-star "></i>
+                </div>
+                <button type="button"
+                    class=" again hidden  mt-4 me-4  text-white  border-2   border-purple-600 hover:bg-purple-600 hover:text-white  rounded-full  p-2  transition duration-75 drop-shadow-md md:drop-shadow-xl hover:-translate-x-1">
+                    <span class="text-2xl">العب مجددا
+                    </span>
+                </button>
+            </div>
+
+            <div class="content">
+                <hr class="h-px my-8 border-0 bg-gray-700">
+                <div class="question  text-white p-3 md:text-md lg:text-lg text-sm"></div>
+                <div class="options ">
+                    <a class="option " data-option="">
+                        <label for="purple-checkbox" class="option-label"></label>
+                    </a>
+                    <a class="option" data-option="">
+                        <label for="purple-checkbox" class="option-label"></label>
+                    </a>
+                    <a class="option" data-option="">
+                        <label for="purple-checkbox" class="option-label"></label>
+                    </a>
+                    <a class="option" data-option="">
+                        <label for="purple-checkbox" class="option-label"></label>
+                    </a>
+                </div>
+
+                <div class="flex md:justify-end justify-center ">
+
+                    <button type="button"
+                        class=" next mt-4 me-4 rotate-180 text-white  border-2   border-purple-600 hover:bg-purple-600 hover:text-white  rounded-full  p-2  transition duration-75 drop-shadow-md md:drop-shadow-xl hover:-translate-x-1">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                        <span
+                            class="sr-only bg-indigo-500 bg-red-500  border-y-indigo-400  -translate-x-2 hover:border-x-purple-400 pointer-events-none bg-green-500 lg:text-lg md:text-md">Icon
+                            description</span>
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+    <script src="js/main.js">
+    </script>
+    <script src="js/classes.js">
+    </script>
+    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+</body>
+
+</html>
+<!-- <div class="bg-gray-200 rounded-full h-2 mt-52 flex items-center mb-4 dark:bg-gray-700">
+    <div class="steps bg-green-600 h-5 rounded-full  shadow-xl shadow-teal-500  dark:bg-teal-500" style="width: 100%;">
+    </div>
+</div>
+
+
+<div class="flex justify-center items-cent dark:text-white mb-5 header">
+    <div class="hidden">
+        <span class="timer mx-2 "> 20:12</span> <i class="far fa-clock font-bold"></i>
+    </div>
+    <div class="mt-5 shadow-xl shadow-teal-400 transition duration-100 transition-all"> <span
+            class="score mx-2 text-4xl">
+            0 </span><i class="fa fa-star fa-3x"></i>
+    </div>
+</div> -->
