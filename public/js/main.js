@@ -17,7 +17,7 @@ d.querySelector(".again").addEventListener("click", () => {
   location.reload();
 });
 
-fetch("../src/questions.json")
+fetch("../../src/questions.json")
   .then((response) => response.json())
   .then((data) => {
     window.localStorage.gameOver = false;
