@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-css": "tailwindcss build src/styles.css -o  public/styles.css --watch"
+    "build-css": "tailwindcss build src/styles.css -o  public/styles.css --watch",
+    "predeploy": "npm run build-css",
+    "deploy": "gh-pages -d public"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^6.0.0",
     "tailwindcss": "^3.3.3"
   },
   "dependencies": {
