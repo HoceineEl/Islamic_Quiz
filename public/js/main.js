@@ -17,7 +17,7 @@ d.querySelector(".again").addEventListener("click", () => {
   location.reload();
 });
 
-fetch("/src/questions.json")
+fetch("../src/questions.json")
   .then((response) => response.json())
   .then((data) => {
     window.localStorage.gameOver = false;
@@ -25,7 +25,7 @@ fetch("/src/questions.json")
     const optionLabels = d.querySelectorAll(".option-label");
     const next = d.querySelector(".next");
     let dataLength = data.length;
-    console.log(data.length);
+    console.log(data);
     showScore();
     let currentQuestion = getCurrentQ();
     setStep();
