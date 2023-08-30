@@ -25,6 +25,7 @@ fetch("../src/questions.json")
     const optionLabels = d.querySelectorAll(".option-label");
     const next = d.querySelector(".next");
     let dataLength = data.length;
+    console.log(data.length);
     showScore();
     let currentQuestion = getCurrentQ();
     setStep();
@@ -65,6 +66,9 @@ fetch("../src/questions.json")
       this.classList.add("-translate-x-2");
       if (selectedOption === correctAnswer) {
         this.classList.add("bg-green-500");
+        // if (window.innerWidth <= 768) {
+        //   this.classList.remove("hover:bg-indigo-500");
+        // }
         score++;
         localStorage.setItem("score", score);
         d.querySelector(".score").textContent = score;
@@ -102,12 +106,14 @@ fetch("../src/questions.json")
       return window.localStorage.gameOver;
     }
     function showScore() {
-      if (getCurrentQ() > 10) {
+      if (getCurrentQ() >= dataLength) {
+        let steps = d.querySelector(".steps");
         d.querySelector(".content").classList.add("hidden");
         d.querySelector(".timer").parentElement.classList.add("hidden");
-        d.querySelector(".steps").parentElement.className += " h-2 mt-52 ";
-        d.querySelector(".steps").style.width = "0%";
-        d.querySelector(".steps").style.height = "20px";
+        steps.parentElement.className += " h-2 mt-52 ";
+        steps.style.width = "0%";
+        steps.style.height = "20px";
+        steps.classList.remove("bg-teal-500");
         d.querySelector(".score").classList += " text-4xl";
         d.querySelector(".score + i").classList += " fa-2x";
         d.querySelector(".score").parentElement.parentElement.classList +=
@@ -117,13 +123,20 @@ fetch("../src/questions.json")
         window.localStorage.gameOver = true;
         let scoreByQuestions =
           (parseInt(window.localStorage.score) * 100) / dataLength;
-        d.querySelector(".steps").style.width = `${scoreByQuestions}%`;
+        steps.style.width = `${scoreByQuestions}%`;
+        console.log(scoreByQuestions);
+        if (scoreByQuestions < 30) steps.classList.add("bg-red-500");
+        else if (scoreByQuestions >= 30 && scoreByQuestions < 50)
+          steps.classList.add("bg-orange-500");
+        else if (scoreByQuestions >= 50 && scoreByQuestions < 80)
+          steps.classList.add("bg-blue-500");
+        else steps.classList.add("bg-green-500");
       }
     }
     setStep();
 
     next.addEventListener("click", () => {
-      if (getCurrentQ() < dataLength) {
+      if (getCurrentQ() < data.length) {
         updateQuestion();
       } else {
         showScore();
